@@ -6,17 +6,6 @@
 
 # mnh.sh
 
-# bash mnh.sh <SOURCE_URL>
-
-# to download and source your config.sh
-
-SOURCE_URL="$1"
-CONFIG=`echo "$SOURCE_URL" | tr '/' ' ' | awk '{print $NF}'`
-[[ -e $CONFIG ]] && rm $CONFIG
-wget $SOURCE_URL 
-sleep 1
-source $CONFIG
-
 gsshk(){
 cd $HOME
 ssh-keygen -t ed25519 -C "$GIT_EMAIL"
