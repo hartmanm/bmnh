@@ -12,7 +12,9 @@
 
 SOURCE_URL="$1"
 CONFIG=`echo "$SOURCE_URL" | tr '/' ' ' | awk '{print $NF}'`
+[[ -e $CONFIG ]] && rm $CONFIG
 wget $SOURCE_URL 
+sleep 1
 source $CONFIG
 
 gsshk(){
